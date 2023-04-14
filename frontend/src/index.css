@@ -3,16 +3,16 @@
 
 /* layout */
 :root {
-  --primary: #1649FF;
+  --primary: #104a24;
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #fff;
   margin: 0;
   font-family: "Poppins";
 }
 header {
-  background: #fff;
+  background:#024b30;
 }
 header .container {
   max-width: 1400px;
@@ -23,8 +23,9 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
+  text-align: center;
 }
 .pages{
   max-width: 1400px;
@@ -39,7 +40,7 @@ header a {
   gap: 40px;
 }
 #route-details {
-  background: #fff;
+  background:  #f5f5f5;
   border-radius: 25px;
   margin: 20px auto;
   padding: 50px;
@@ -61,7 +62,7 @@ header a {
   top: 50px;
   right: 50px;
   cursor: pointer;
-  background: #f1f1f1;
+  background:  #f5f5f5;
   padding: 5px;
   border-radius: 50%;
   color: #333;
@@ -69,10 +70,10 @@ header a {
 
 /* form */
 .region-form{
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 25px;
   margin: 20px auto;
-  padding: 10px 30px 50px 30px;
+  padding: 20px 50px 50px 40px;
   position: relative;
   height: 150px;
 }
@@ -135,6 +136,6 @@ form.signup, form.login {
   max-width: 400px;
   margin: 20px auto;
   padding: 50px;
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 25px;
 }

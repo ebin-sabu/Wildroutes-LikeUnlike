@@ -1,9 +1,15 @@
 import {useRoutesContext} from '../hooks/useRoutesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import react from 'react'
 
 const RouteDetails = ({route}) => {
     const {dispatch} = useRoutesContext()
     const {user} = useAuthContext()
+    const handleForceupdateMethod = () =>{
+        this.forceUpdate()
+    }
+    const moreInformation = false
+
 
     const likePost = async()=>{
         if(!user){
@@ -16,10 +22,10 @@ const RouteDetails = ({route}) => {
             }
         })
         const json = await response.json()
-
+        const idCode = route._id
         if(response.ok){
-            dispatch({type: 'SET_ROUTE', payload: json})
-            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/ 
+            dispatch({type: 'UPDATE_LIKES', payload: json})
+            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/
             window.location.reload(); 
         }
     }
@@ -36,11 +42,11 @@ const RouteDetails = ({route}) => {
             }
         })
         const json = await response.json()
-
+        const idCode = route._id
         if(response.ok){
             dispatch({type: 'DELETE_ROUTE', payload: json})
-            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/ 
-            window.location.reload(); 
+            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/
+            //window.location.reload(); 
         }
     }
 
@@ -53,9 +59,10 @@ const RouteDetails = ({route}) => {
                 ? 
                     <i className="material-symbols-outlined"onClick={unlikePost}> close </i>
                 : 
-                    <i class="material-symbols-outlined"onClick={likePost}>favorite</i>
+                    <i className="material-symbols-outlined"onClick={likePost}>favorite</i>
             }
             <h6>{route.likedBy.length} likes</h6>
+            <h8>Adventure Uploaded By: {route.madeBy}</h8>
         </div>
     )
 }
